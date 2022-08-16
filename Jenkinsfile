@@ -11,7 +11,7 @@ git branch: 'main', url: 'https://github.com/jmacalima-it/ibm-java.git'
 stage ('package stage') {
 
 sh 'chmod +x mvnw'
-sh label: '', script: 'mvnw clean package '
+sh label: '', script: './mvnw clean package '
 
 
 }
