@@ -8,7 +8,7 @@ pipeline {
     
   stages {
     
-stage ('scm checkout') {
+stage ('SCM checkout') {
 
   steps {
 git branch: 'main', url: 'https://github.com/jmacalima-it/ibm-java.git'
@@ -18,7 +18,7 @@ git branch: 'main', url: 'https://github.com/jmacalima-it/ibm-java.git'
 }
 
 
-stage ('package stage') {
+stage ('Package Stage') {
 
   steps {
 sh 'chmod +x mvnw'
@@ -28,7 +28,7 @@ sh label: '', script: './mvnw clean package '
     
 }
   
-  stage ('docker image build') {
+  stage ('Docker Image Build') {
 
     steps {
 sh 'docker build -t java-helloworld .'
