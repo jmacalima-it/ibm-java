@@ -1,7 +1,7 @@
 node{
 
-  def dockerRun = 'docker run -d -p 80:8080 --name auto-java jmacalima/java-test:helloworld'
-  def dockerLogin = 'docker login -u ${udocker} -p ${pdocker}'
+  def dockerRun = 'docker run -d -p 80:8080 --name auto-java jmacalimait/java-test:helloworld'
+ 
 stage ('scm checkout') {
 
 git branch: 'main', url: 'https://github.com/jmacalima-it/ibm-java.git'
@@ -27,11 +27,7 @@ sh 'docker tag java-helloworld jmacalima/java-test:helloworld'
 
   stage ('Push Docker image to DockerHub') {
 
-withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pdocker', usernameVariable: 'udocker')]) {
 
-sh 'docker login -u ${udocker} -p ${pdocker}'
-
-}
 
 sh 'docker push jmacalima/java-test:helloworld'
 
@@ -39,8 +35,7 @@ sh 'docker push jmacalima/java-test:helloworld'
   
   stage ('Deploy to Dev') {
     
-    withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pdocker', usernameVariable: 'udocker')]) {
-
+ 
     
 sshagent(['dserver']) {
 
@@ -48,7 +43,7 @@ sshagent(['dserver']) {
 
 }
 
-}
+
   }
     
 }
