@@ -1,6 +1,6 @@
 node{
 
-  def dockerRun = 'docker run -d -p 80:8080 --name auto-java jmacalimait/java-test:java-helloworld'
+  def dockerRun = 'docker run -d -p 80:8080 --name auto-java jmacalima/java-test:helloworld'
   def dockerLogin = 'docker login -u ${udocker} -p ${pdocker}'
 stage ('scm checkout') {
 
@@ -21,7 +21,7 @@ sh label: '', script: './mvnw clean package '
   stage ('docker image build') {
 
 sh 'docker build -t java-helloworld .'
-sh 'docker tag java-helloworld jmacalimait/java-test:java-helloworld'
+sh 'docker tag java-helloworld jmacalima/java-test:helloworld'
 
 }
 
@@ -33,7 +33,7 @@ sh 'docker login -u ${udocker} -p ${pdocker}'
 
 }
 
-sh 'docker push jmacalimait/java-test:java-helloworld'
+sh 'docker push jmacalima/java-test:helloworld'
 
 }
   
