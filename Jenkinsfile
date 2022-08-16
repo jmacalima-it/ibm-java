@@ -22,4 +22,16 @@ sh 'docker build -t jeff/java-helloworld .'
 
 }
 
+  stage ('Push Docker image to DockerHub') {
+
+withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
+
+sh "docker login -u jmacalimait -p ${dockerhubaccount}"
+
+}
+
+sh 'docker push jmacalima/java-helloworld'
+
+}
+  
 }
