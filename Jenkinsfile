@@ -4,6 +4,7 @@ pipeline {
   
   environment {
   def dockerRun = 'docker run -d -p 80:8080 --name jenkins-java jmacalimait/java-test:helloworld'
+    def test = 'test'
   }
     
   stages {
