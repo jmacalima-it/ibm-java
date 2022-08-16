@@ -31,7 +31,7 @@ sh 'docker login -u ${udocker} -p ${pdocker}'
 
 }
 
-sh 'docker push macalimait/java-test/java-helloworld'
+sh 'docker push jmacalimait/java-test/java-helloworld'
 
 }
   
