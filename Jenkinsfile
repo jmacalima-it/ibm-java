@@ -9,7 +9,7 @@ git branch: 'main', url: 'https://github.com/jmacalima-it/ibm-java.git'
 
 stage ('package stage') {
 
-sh label: '', script: 'mvn clean package '
+sh label: '', script: 'mvnw clean package '
 
 }
 
