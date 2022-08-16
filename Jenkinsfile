@@ -1,8 +1,8 @@
 node{
 
-stage (‘scm checkout’) {
+stage ('scm checkout') {
 
-git ‘https://github.com/jmacalima-it/ibm-java.git'
+git 'https://github.com/jmacalima-it/ibm-java.git'
 
 }
 
