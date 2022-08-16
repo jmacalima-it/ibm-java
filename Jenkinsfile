@@ -21,7 +21,7 @@ sh label: '', script: './mvnw clean package '
   stage ('docker image build') {
 
 sh 'docker build -t java-helloworld .'
-sh 'docker tag java-helloworld jmacalima/java-test:helloworld'
+sh 'docker tag java-helloworld jmacalimait/java-test:helloworld'
 
 }
 
@@ -29,7 +29,7 @@ sh 'docker tag java-helloworld jmacalima/java-test:helloworld'
 
 
 
-sh 'docker push jmacalima/java-test:helloworld'
+sh 'docker push jmacalimait/java-test:helloworld'
 
 }
   
