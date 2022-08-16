@@ -15,5 +15,11 @@ sh label: '', script: './mvnw clean package '
 
 
 }
+  
+  stage ('docker image build') {
+
+sh 'docker build -t jeff/java-helloworld .'
+
+}
 
 }
