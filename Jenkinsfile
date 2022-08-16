@@ -1,6 +1,6 @@
 node{
 
-  def dockerRun = 'docker run -d -p 80:8080 — name auto-java jmacalimait/java-test:java-helloworld'
+  def dockerRun = 'docker run -d -p 80:8080 --name auto-java jmacalimait/java-test:java-helloworld'
   
 stage ('scm checkout') {
 
