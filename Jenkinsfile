@@ -35,4 +35,16 @@ sh 'docker push jmacalimait/java-test:java-helloworld'
 
 }
   
+  stage ('Deploy to Dev') {
+
+def dockerRun = 'docker run -d -p 80:8080 — name auto-java jmacalimait/java-test:java-helloworld'
+
+sshagent(['dserver']) {
+
+sh 'ssh -o StrictHostKeyChecking=no ubuntu@52.53.43.187 ${dockerRun}'
+
+}
+
+}
+  
 }
