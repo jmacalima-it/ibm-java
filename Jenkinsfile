@@ -39,7 +39,7 @@ sh 'docker push jmacalimait/java-test:java-helloworld'
   
   stage ('Deploy to Dev') {
     
-    withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pdocker', usernameVariable: 'udocker')]) 
+    withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pdocker', usernameVariable: 'udocker')]) {
 
     
 sshagent(['dserver']) {
@@ -49,5 +49,6 @@ sshagent(['dserver']) {
 }
 
 }
-  
+  }
+    
 }
