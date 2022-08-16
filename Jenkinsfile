@@ -26,7 +26,7 @@ sh 'docker build -t jeff/java-helloworld .'
 
 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'p-docker', usernameVariable: 'u-docker')]) {
 
-sh "docker login -u ${p-docker} -p ${u-docker}"
+sh "docker login -u ${u-docker} -p ${p-docker}"
 
 }
 
