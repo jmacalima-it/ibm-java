@@ -39,7 +39,7 @@ sh 'docker push jmacalimait/java-test:helloworld'
     
 sshagent(['dserver']) {
 
-  sh "ssh -o StrictHostKeyChecking=no ubuntu@52.53.43.187 ${dockerLogin} && ${dockerRun}"
+  sh "ssh -o StrictHostKeyChecking=no ubuntu@52.53.43.187 ${dockerRun}"
 
 }
 
