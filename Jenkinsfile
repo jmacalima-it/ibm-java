@@ -30,7 +30,7 @@ sh 'docker login -u ${udocker} -p ${pdocker}'
 
 }
 
-sh 'docker push jmacalima/java-helloworld'
+sh 'docker push jeff/java-helloworld'
 
 }
   
