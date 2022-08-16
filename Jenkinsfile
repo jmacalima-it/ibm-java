@@ -26,7 +26,7 @@ sh 'docker build -t jeff/java-helloworld .'
 
 withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
 
-sh "docker login -u jmacalimait -p ${dockerhubaccount}"
+sh "docker login -u jmacalimait -p ${dockerhub}"
 
 }
 
