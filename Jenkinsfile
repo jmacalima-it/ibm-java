@@ -24,9 +24,9 @@ sh 'docker build -t jeff/java-helloworld .'
 
   stage ('Push Docker image to DockerHub') {
 
-withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'p-docker', usernameVariable: 'u-docker')]) {
+withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pdocker', usernameVariable: 'udocker')]) {
 
-sh 'docker login -u ${u-docker} -p ${p-docker}'
+sh 'docker login -u ${udocker} -p ${pdocker}'
 
 }
 
